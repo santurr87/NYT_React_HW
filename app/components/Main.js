@@ -30,18 +30,6 @@ var Main = React.createClass({
     if(prevState.topic != this.state.topic){
       console.log("UPDATED");
 
-      helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear)
-        .then(function(data){
-          console.log(data);
-          if (data != this.state.results)
-          {
-            this.setState({
-              results: data
-            })
-          }
-        }.bind(this))
-    }
-  },
 
   componentDidMount: function(){
     axios.get('/api/saved')
